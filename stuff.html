@@ -13,17 +13,20 @@
 var bImage = ;
 var w = window.innerWidth;
 var h = window.innerHeight;
+
+      function preload() {
+        bImage = loadImage('KKona.jpeg');
+      }
       function setup() {
   // creates canvas with (x, y) //
         createCanvas(w, h, WEBGL);
   //WEBGL needed for rotation//
-        bImage = loadImage('KKona.jpeg');
+        background(bImage,0,0);
       }
 
       function draw() {
         clear();
-        background(bImage);
-        // some stuff is live image // 
+        // some stuff is live image //
         rotateY(mouseX/100);
         rotateX(mouseY/100);
         // divide by 100 to make mouse less sensitive//
