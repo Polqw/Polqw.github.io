@@ -1,39 +1,45 @@
 <html>
   <head>
-    
-        <script src="p5.min.js"></script>
-        <script src="p5.dom.js"></script>
-
-
-
+    <script src="p5.min.js"></script>
+    <script src="p5.gui.js"></script>
+    <script src="quicksettings.js"></script>
+    <script src="p5.dom.js"></script>
+    <style>
+      body {
+      margin: 0;
+      padding: 0;
+      }
+    </style>
   </head>
   <body>
     <script>
-var pic;//sets global variable for your texture
-var w = window.innerWidth;
-var h = window.innerHeight;
-function preload(){
-  pic = loadImage("Nice.jpeg")//puts image as texture variable
-}
-function setup(){
-  createCanvas(w,h,WEBGL);
-    }
-function draw(){
-  background(100)
-  
+      var pic;
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+      var button;
+      var video;
+      function preload() {
+        pic = loadImage("Nice.jpeg");
+      }
+      function setup() {
+        createCanvas(w,h, WEBGL);
+        video = createCapture(VIDEO);
+        video.size(320,240);
+        button = createButton('CLICK');
+        button.mousePressed(snapshot);
+        
+        
+      }
+      function draw() {
+        background(100);
+        pic.background(255);
+        
+        texure(pic);
+        rotateY(MouseX/10);
+        rotateX(MouseY/10);
+        box(200,300);
 
-
-  texture(pic)
-  rotateY(mouseX/10)
-  rotateX(mouseY/100)
-  circle(200,300)
-
-      
-    }
-
-      
-      
-      
+      }
     </script>
   </body>
 </html>
