@@ -4,12 +4,6 @@
     <script src="p5.gui.js"></script>
     <script src="quicksettings.js"></script>
     <script src="p5.dom.js"></script>
-    <style>
-      body {
-      margin: 0;
-      padding: 0;
-      }
-    </style>
   </head>
   <body>
     <script>
@@ -27,11 +21,10 @@
       }
       function draw() {
         background(100);
-        pic.background(255);
         
         texure(pic);
-        rotateY(MouseX/10);
-        rotateX(MouseY/10);
+        rotateX(MouseX/10);
+        rotateY(MouseY/10);
         box(200,300);
 
       }
