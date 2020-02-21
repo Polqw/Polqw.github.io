@@ -1,35 +1,39 @@
 <html>
   <head>
-    <script src="p5.min.js"></script>
-    <script src="p5.gui.js"></script>
-    <script src="quicksettings.js"></script>
-    <script src="p5.dom.js"></script>
-    <style>
-    </style>
+    
+        <script src="p5.min.js"></script>
+        <script src="p5.dom.js"></script>
+
+
+
   </head>
   <body>
     <script>
-      var pic;
-      var w = window.innerWidth;
-      var h = window.innerHeight;
-      var video;
+var pic;//sets global variable for your texture
+var w = window.innerWidth;
+var h = window.innerHeight;
+function preload(){
+  pic = createCapture(VIDEO)//puts image as texture variable
+}
+function setup(){
+  createCanvas(w,h,WEBGL);
+    }
+function draw(){
+  background(100)
+  
 
-      function setup() {
-        pic = createCapture(VIDEO);
-        pic.size(320,240);
-        
-        
-      }
-      function draw() {
-        background(100);
-        video.background(255);
-        
-        texture(pic);
-        rotateY(MouseX/10);
-        rotateX(MouseY/10);
-        box(200,300);
 
-      }
+  texture(pic)
+  rotateY(mouseX/10)
+  rotateX(mouseY/100)
+  box(200,300)
+
+      
+    }
+
+      
+      
+      
     </script>
   </body>
 </html>
